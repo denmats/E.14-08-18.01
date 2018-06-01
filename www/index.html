@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset='utf-8'/>
+<title>Szkola podnadgimnazjalna</title>
+<link rel="stylesheet" type="text/css" href="styl.css"/>
+</head>
+<body>
+	<div class="container">
+	<div class="baner"><h1>Projekt strony internetowej szkoły ponadgimnazjalnej</h1></div>
+	<div class="lewy">
+		<h3>Do pobrania</h3>
+		<ul>
+			<li><a href="http://localhost/Arkusz%20E.14-08-18.01/baza/zapytania.txt">Zapytania SQL</a></li>
+			<li><a href="http://localhost/Arkusz%20E.14-08-18.01/baza/nowa_szkola.sql">Baza danych</a></li>
+		</ul>
+		<hr>
+		<h3>Wyznaczanie najwyższej średniej</h3>
+		<ul>
+			<li>Polak <input type="text" id="a"></li>
+			<li>Nowak <input type="text" id="b"></li>
+			<li>Rysik <input type="text" id="c"></li>
+		</ul>
+		<input type="button" value="Wyznacz" onclick="wyznacz()">
+		<h3>Najwyższa średnia:</h3>
+		<h2 id="result"></h2>
+	</div>
+	<div class="prawy">
+	<table>
+		<tr>
+			<th>Treść zapytania</th>
+			<th>Zrzut ekranu</th>
+		</tr>
+		<tr>
+			<td>UPDATE `uczen` SET `nazwisko`='Stasiak',`imie`='Maciej',`id_klasy`=5 WHERE id=5;</td>
+			<td class="td_right"><img src="./kwerenda1.jpg" alt="kwerenda1"></td>
+			
+		</tr>
+		<tr>
+			<td>select uczen.nazwisko, uczen.imie from uczen inner join klasa on uczen.id_klasy=klasa.id inner join wychowawca on klasa.id=wychowawca.id_klasy where wychowawca.nazwisko="Michalska";</td>
+			<td class="td_right"><img src="./kwerenda2.jpg" alt="kwerenda2"></td>
+		</tr>
+		<tr>
+			<td>create user 'K_Pietkiewicz'@'localhost' identified by 'kp_123';</td>
+			<td class="td_right"><img src="./nowy_uzytkownik.jpg" alt="nowy_uzytkownik"></td>
+		</tr>
+		<tr>
+			<td>grant all privileges on szkola.uczen to 'K_Pietkiewicz'@'localhost' identified by 'kp_123';</td>
+			<td class="td_right"><img src="./uprawnienia.jpg" alt="uprawnienia"></td>
+		</tr>	
+	</table>
+	</div>
+	<div class="stopka">
+		<h4>stronę wykonał: 12345678901.</h4>
+	</div>
+
+</div>
+<script>
+function wyznacz()
+{
+	let a=document.getElementById("a").value;
+	let b=document.getElementById("b").value;
+	let c=document.getElementById("c").value;
+	
+	
+	a=parseFloat(a);
+	//console.log(typeof(a));
+	b=parseFloat(b);
+	//console.log(typeof(b));
+	c=parseFloat(c);
+	//console.log(typeof(c));
+	
+	if((isNaN(a))||(isNaN(b))||(isNaN(c)))
+		{
+			alert("wpisz poprawne dane");
+		}
+	else 
+		{
+			document.getElementById("result").innerHTML=Math.max(a,b,c);
+		}
+	
+}
+</script>
+
+</body>
+
+</html>

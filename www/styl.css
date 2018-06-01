@@ -1,0 +1,72 @@
+body
+{
+	background-color: black;
+}
+
+.container
+{
+	background-color: gray;
+	font-family: Tachoma;
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+a
+{
+	color: white;
+}
+
+.baner
+{
+	background-color: #af8c4b;
+	text-align: center;
+	height: 60px;
+}
+
+.lewy
+{
+	background-color: #af8c4b;
+	text-align: right;
+	float:left;
+	width: 30%;
+	height: 500px;
+}
+
+.prawy
+{
+	background-color: #ffd87e;
+	float:left;
+	width: 70%;
+	height: 500px;
+	overflow: auto;
+}
+
+.stopka
+{
+	clear:both;
+	background-color: #af8c4b;
+	text-align: center;
+	height: 25px;
+}
+
+hr
+{
+	border-color:  #ffd87e;
+}
+
+.td_right
+{
+	width: 405px;
+}
+
+td
+{
+	border: 1px dotted black;
+}
+
+ul
+{
+	list-style-type: circle;
+	list-style-position: inside;
+}

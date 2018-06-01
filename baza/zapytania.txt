@@ -1,0 +1,11 @@
+UPDATE `uczen` SET `nazwisko`='Stasiak',`imie`='Maciej',`id_klasy`=5 WHERE id=5;
+
+select uczen.nazwisko, uczen.imie from uczen
+inner join klasa on uczen.id_klasy=klasa.id
+inner join wychowawca on klasa.id=wychowawca.id_klasy
+where wychowawca.nazwisko="Michalska";
+
+create user 'K_Pietkiewicz'@'localhost' identified by 'kp_123';
+
+grant all privileges on szkola.uczen to 'K_Pietkiewicz'@'localhost' identified by 'kp_123';
+
